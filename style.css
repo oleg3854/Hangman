@@ -1,0 +1,280 @@
+@font-face { 
+  font-family: 'Need'; 
+  src: url(fonts/NeedleteethSP_0.otf); 
+} 
+  
+@font-face { 
+  font-family: 'Neucha'; 
+  src: url(fonts/Neucha.ttf); 
+} 
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+} 
+
+/* popup */
+
+.popup {
+  position: absolute;
+  top: 20%; 
+  left: 25%;
+
+  height: 45%;
+  width: 1000px;
+  height: 450px;
+
+  padding: 15px 20px;
+  border: 1px solid #383838;
+  background: black;
+  z-index: 3;
+  border-radius: 4px;
+} 
+
+.disclaimer-title { 
+  font-family: 'Neucha'; 
+  font-size: 100px; 
+  color: white; 
+  text-align: center; 
+}
+
+.disclaimer-img {
+  position: absolute;
+  right: 488px;
+  top: 52px;
+
+  width: 81px;
+  height: 69px;
+}
+
+.disclaimer { 
+  font-family: 'Neucha'; 
+  font-size: 40px; 
+  color: white; 
+  text-align: center; 
+} 
+
+.close { 
+  position: absolute;
+  left: 45%;
+  bottom: 5%;
+
+  width: 79px;
+  height: 44px;
+
+  font-size: 45px;
+  font-family: 'Need';
+  border: none;
+  border-radius: 8%;
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  outline: none;
+}
+
+.close:before { 
+  color: black;  
+  font-size: 30px; 
+  font-weight: normal; 
+  text-decoration: none; 
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.9);  
+  transition: all 0.5s; 
+} 
+
+.close:hover { 
+  background-color: grey; 
+} 
+
+/* popup end */
+
+/* container */
+
+.container {
+  display: flex; 
+  position: relative;
+
+  margin: 30px;
+
+  height: 850px; 
+  width: 1800px; 
+  background-color: black; 
+} 
+
+.left, .right { 
+  width: 50%; 
+  height: 100%;
+
+  font-family: 'Need'; 
+} 
+
+.right {
+  margin-left: 180px;
+}
+
+.left {
+  margin-left: 93px;
+}
+
+.gallows { 
+  height: 100%;
+} 
+
+.back {
+  position: absolute;
+  top: 2%;
+  right: 247%;
+
+  width: 14%;
+  height: 5%;
+
+  font-family: 'Need';
+  font-size: 45px;
+  background-color: white;
+  border-radius: 60px;
+  cursor: pointer;
+  border: none;
+  z-index: 2;
+}
+
+.right-title { 
+  color: white; 
+  font-size: 170px;
+  font-weight: normal; 
+}
+
+.right__button {
+  margin-top: 68px;
+
+  height: 127px;
+  width: 422px;
+
+  cursor: pointer;
+  border: none;
+  font-family: 'Need';
+  font-size: 116px;
+  border-radius: 60px;
+}
+
+.right-easy {
+  display: none;
+  position: absolute;
+  left: 62%;
+
+  width: 38%;
+  height: 100%;
+
+  font-family: 'Need';
+  background-color: black;
+  z-index: 2;
+}
+
+.right-medium {
+  display: none;
+  position: absolute;
+  left: 62%;
+
+  width: 38%;
+  height: 100%;
+
+  font-family: 'Need';
+  background-color: black;
+  z-index: 2;
+}
+
+.right-hard {
+  display: none;
+  position: absolute;
+  left: 62%;
+
+  width: 38%;
+  height: 100%;
+
+  background-color: black;
+  font-family: 'Need';
+  z-index: 2;
+}
+
+/* container end */
+
+/* game */
+
+.game-menu {
+  margin: 50px;
+  height: 850px;
+  width: 1800px;
+  background-color: black;
+}
+
+.game-1 {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.game-2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-3 {
+  display: flex;
+  justify-content: center;
+}
+
+.game-menu__title {
+  font-family: Need;
+  font-size: 153px;
+  color: white;
+  font-weight: 500;
+}
+
+.game-menu__button {
+  width: 250px;
+  height: 60px;
+
+  font-size: 44px;
+  font-family: 'Need';
+  background-color: white;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+.game-menu__word {
+  font-size: 100px;
+  line-height: 118px;
+  color: #FFFFFF;
+}
+
+.letter {
+  width: 50px;
+  height: 50px;
+
+  cursor: pointer;
+}
+
+/* game end */
+
+/* popup-mess */
+
+.popup-mess {
+  margin: 50px;
+  width: 1000px;
+
+  font-size: 150px;
+  font-family: 'Need';
+  text-align: center;
+  background: red;
+  border-radius: 47px;
+}
+
+.popup-mess__button {
+  width: 150px;
+  height: 100px;
+}
+
+/* popup-mess end */
