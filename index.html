@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts/game-js.js" defer></script>
+    <script src="scripts/game-js-medium.js" defer></script>
+    <script src="scripts/game-js-hard.js" defer></script>
 </head>
 <body>
     <div class="popup" id="popup">
@@ -17,94 +20,82 @@
         </p>
         <button class="close" title="Закрыть" onclick="document.getElementById('popup').style.display='none';">OK</button>
     </div>
-    <div class="container">
-        <div class="left"><img class="gallows" src="img/gallows-animation.gif" alt=""></div>
+    <div class="container1">
+        <div class="left" id="left"><img class="gallows" src="img/gallows-animation.gif" alt=""></div>
         <div class="right" id="right">
             <h2 class="right-title">Сложность</h2>
             <div class="buttons-wrapper">
                 <button class="right__button easy" onclick="document.getElementById('right').style.display='none';document.getElementById('right-easy').style.display='block';" >Легкая</button>
-                <button class="right__button medium" onclick="document.getElementById('right').style.display='none';document.getElementById('right-medium').style.display='block';">Средняя</button>
+                <button class="right__button medium" onclick="document.getElementById('right').style.display='none';document.getElementById('right-medium').style.display='block';'myFunction()'">Средняя</button>
                 <button class="right__button hard" onclick="document.getElementById('right').style.display='none';document.getElementById('right-hard').style.display='block';">Кошмар</button>
             </div>
         </div>
         <div class="right-easy" id="right-easy">
-            <h2 class="right-title">Выбор темы</h2>
-            <button class="back" onclick="document.getElementById('right-easy').style.display='none';document.getElementById('right').style.display='block';">Назад</button>
-            <div class="buttons-wrapper">
-                <button class="right__button fruits">Фрукты</button>
-                <button class="right__button animal">Животные</button>
-                <button class="right__button anatomy">Анатомия</button>
-            </div>
+            <h2 class="right-title" id="right-title">Выбор темы</h2>
+            <button class="back" onclick="document.getElementById('right-easy').style.display='none';document.getElementById('right').style.display='block';document.getElementById('left').style.display='block';">Назад</button>
+            <div class="container" id="container">
+                <div id="options-container"></div>
+                <div id="letter-container" class="letter-container hide"></div>
+                <div id="user-input-section"></div>
+                <canvas id="canvas"></canvas>
+                <!--<button class="game-menu__button" id="game-menu__button" onclick="document.getElementById('left').style.display='block';
+                document.getElementById('right-easy').style.left='62%';
+                document.getElementById('options-container').style.display='block';
+                document.getElementById('right-easy').style.width='38%';
+                document.getElementById('canvas').style.display='none';
+                document.getElementById('right-title').style.display='block';">Вернуться в меню</button>-->
+                <div id="new-game-container" class="new-game-popup hide">
+                  <div id="result-text"></div>
+                  <button id="new-game-button" onclick="document.getElementById('left').style.display='block';
+                  document.getElementById('right-easy').style.left='62%';
+                  document.getElementById('options-container').style.display='block';
+                  document.getElementById('right-easy').style.width='38%';
+                  document.getElementById('canvas').style.display='none';
+                  document.getElementById('right-title').style.display='block';
+                  document.getElementById('game-menu__button').style.display='none';">Вернуться в меню</button>
+                </div>
+              </div>
         </div>
         <div class="right-medium" id="right-medium">
-            <h2 class="right-title">Выбор темы</h2>
-            <button class="back" onclick="document.getElementById('right-medium').style.display='none';document.getElementById('right').style.display='block';">Назад</button>
-            <div class="buttons-wrapper">
-                <button class="right__button professions">Профессии</button>
-                <button class="right__button sushi">Суши</button>
-                <button class="right__button football">Футбол</button>
+          <h2 class="right-title" id="right-title">Выбор темы</h2>
+          <button class="back" onclick="document.getElementById('right-medium').style.display='none';document.getElementById('right').style.display='block';document.getElementById('left').style.display='block';">Назад</button>
+          <div class="container" id="container">
+              <div id="options-container"></div>
+              <div id="letter-container" class="letter-container hide"></div>
+              <div id="user-input-section"></div>
+              <canvas id="canvas"></canvas>
+              <div id="new-game-container" class="new-game-popup hide">
+                <div id="result-text"></div>
+                <button id="new-game-button" onclick="document.getElementById('left').style.display='block';
+                document.getElementById('right-medium').style.left='62%';
+                document.getElementById('options-container').style.display='block';
+                document.getElementById('right-medium').style.width='38%';
+                document.getElementById('canvas').style.display='none';
+                document.getElementById('right-title').style.display='block';
+                document.getElementById('game-menu__button').style.display='none';">Вернуться в меню</button>
+              </div>
             </div>
         </div>
         <div class="right-hard" id="right-hard">
-            <h2 class="right-title">Выбор темы</h2>
-            <button class="back" onclick="document.getElementById('right-hard').style.display='none';document.getElementById('right').style.display='block';">Назад</button>
-            <div class="buttons-wrapper">
-                <button class="right__button IT">IT</button>
-                <button class="right__button psychiatry">Психиатрия</button>
-                <button class="right__button chemistry">Химия</button>
+        <h2 class="right-title" id="right-title">Выбор темы</h2>
+        <button class="back" onclick="document.getElementById('right-hard').style.display='none';document.getElementById('right').style.display='block';document.getElementById('left').style.display='block';">Назад</button>
+        <div class="container" id="container">
+            <div id="options-container"></div>
+            <div id="letter-container" class="letter-container hide"></div>
+            <div id="user-input-section"></div>
+            <canvas id="canvas"></canvas>
+            <div id="new-game-container" class="new-game-popup hide">
+              <div id="result-text"></div>
+              <button id="new-game-button" onclick="document.getElementById('left').style.display='block';
+              document.getElementById('right-hard').style.left='62%';
+              document.getElementById('options-container').style.display='block';
+              document.getElementById('right-hard').style.width='38%';
+              document.getElementById('canvas').style.display='none';
+              document.getElementById('right-title').style.display='block';
+              document.getElementById('game-menu__button').style.display='none';">Вернуться в меню</button>
             </div>
+          </div>
         </div>
     </div>
-    <div class="game-menu">
-      <div class="game-1">
-        <button class="game-menu__button" onclick="document.getElementById('right-easy').style.display='none';">Сдаться</button>
-        <h2 class="game-menu__title">ТЕМА: АНАТОМИЯ</h2>
-        <button class="game-menu__button" onclick="document.getElementById('right-easy').style.display='none';">Вернуться в меню</button>
-      </div>
-      <div class="game-2">
-        <div class="game-menu__word">Володя</div>
-        <img class="game-menu__img" src="img/level_1.png" alt="">
-      </div>
-      <div class="game-3">
-        <button class="letter">А</button>
-        <button class="letter">Б</button>
-        <button class="letter">В</button>
-        <button class="letter">Г</button>
-        <button class="letter">Д</button>
-        <button class="letter">Е</button>
-        <button class="letter">Ё</button>
-        <button class="letter">Ж</button>
-        <button class="letter">З</button>
-        <button class="letter">И</button>
-        <button class="letter">Й</button>
-        <button class="letter">К</button>
-        <button class="letter">Л</button>
-        <button class="letter">М</button>
-        <button class="letter">Н</button>
-        <button class="letter">О</button>
-        <button class="letter">П</button>
-        <button class="letter">Р</button>
-        <button class="letter">С</button>
-        <button class="letter">Т</button>
-        <button class="letter">У</button>
-        <button class="letter">Ф</button>
-        <button class="letter">Х</button>
-        <button class="letter">Ц</button>
-        <button class="letter">Ч</button>
-        <button class="letter">Ш</button>
-        <button class="letter">Щ</button>
-        <button class="letter">Ъ</button>
-        <button class="letter">Ы</button>
-        <button class="letter">Ь</button>
-        <button class="letter">Э</button>
-        <button class="letter">Ю</button>
-        <button class="letter">Я</button>
-      </div>
-    </div>
-    <div class="popup-mess">
-      <p>ТЫ СПАС ЕГО!</p>
-      <p>ПОВЕСЕЛИМСЯ ЕЩЁ?</p>
-      <button class="popup-mess__button">ОК</button>
-  </div>
 </body>
 </html>

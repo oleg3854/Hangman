@@ -90,7 +90,7 @@
 
 /* container */
 
-.container {
+.container1{
   display: flex; 
   position: relative;
 
@@ -206,25 +206,6 @@
   background-color: black;
 }
 
-.game-1 {
-  display: flex;
-  justify-content: space-between;
-
-  padding-top: 30px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.game-2 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.game-3 {
-  display: flex;
-  justify-content: center;
-}
 
 .game-menu__title {
   font-family: Need;
@@ -234,14 +215,18 @@
 }
 
 .game-menu__button {
+  z-index: 2;
+  top: 1%;
+  right: 1%;
+  position: absolute;
   width: 250px;
   height: 60px;
-
   font-size: 44px;
   font-family: 'Need';
   background-color: white;
   border-radius: 60px;
   cursor: pointer;
+  display: none;
 }
 
 .game-menu__word {
@@ -277,4 +262,117 @@
   height: 100px;
 }
 
-/* popup-mess end */
+#options-container {
+  text-align: center;
+}
+#options-container div {
+  width: 300px;
+  gap: 38px;
+  display: flex;
+  flex-direction: column;
+}
+#options-container button {
+  font-family: 'Need';
+  position: relative;
+  padding: 19px 65px;
+  border: 3px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+  text-transform: capitalize;
+  font-size: 84px;
+  border-radius: 60px;
+}
+button:disabled {
+  color:red !important;
+}
+
+.letter-container {
+  top: 665px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 0.6em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#letter-container button {
+  border: double;
+  color: white;
+  font-family: 'Need';
+  font-size: 33px;
+  height: 2.4em;
+  width: 2.4em;
+  border-radius: 0.3em;
+  background-color: black;
+}
+.new-game-popup {
+  z-index: 4;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#user-input-section {
+  color: white;
+  gap: 15px;
+  display: flex;
+  font-size: 7.8em;
+  margin: 2.6em 1.2em 0
+}
+canvas {
+  width: 760px;
+  position: absolute;
+  background: white;
+  right: 70px;
+  top: 160px;
+  top: 160px;
+  margin: auto;
+  border: 1px solid white;
+  display: none;
+}
+.hide {
+  display: none;
+}
+#result-text h2 {
+  font-size: 8.8em;
+  text-align: center;
+}
+#result-text p {
+  text-align: center;
+    font-weight: normal;
+    color: white;
+    font-size: 3.25em;
+    margin: 1em 0 2em 0;
+}
+#result-text span {
+  font-weight: normal;
+}
+#new-game-button {
+  font-family: 'Need';
+  font-size: 2.25em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.2em;
+}
+
+.win-msg {
+  color: white;
+  font-weight: normal;
+}
+.lose-msg {
+  color: white;
+  font-weight: normal;
+}
+
+h1 {
+  position: relative;
+  font-size: 87px;
+  left: 197%;
+}
